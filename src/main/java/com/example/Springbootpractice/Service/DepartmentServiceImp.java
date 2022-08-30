@@ -28,4 +28,24 @@ public class DepartmentServiceImp implements DepartmentService{
     public Department getDepartmentById(Long id) {
         return departmentRepository.findById(id).get();
     }
+
+    @Override
+    public List<Department> deleteDepartmentByID(Long id) {
+        departmentRepository.deleteById(id);
+        return departmentRepository.findAll();
+    }
+
+    @Override
+    public List<Department> updateDepartment(Long id, String departmentName) {
+        if(departmentRepository.existsById(id))
+        {
+            Department department = departmentRepository.findById(id).get();
+            department.setDepartmentName(departmentName);
+            departmentRepository.save(department);
+        }
+        else {
+            throw new IllegalStateException("the instance is not available");
+        }
+        return departmentRepository.findAll();
+    }
 }

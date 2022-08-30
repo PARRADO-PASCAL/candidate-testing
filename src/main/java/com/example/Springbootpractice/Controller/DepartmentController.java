@@ -1,7 +1,6 @@
 package com.example.Springbootpractice.Controller;
 
 import com.example.Springbootpractice.Entity.Department;
-import com.example.Springbootpractice.Repository.DepartmentRepository;
 import com.example.Springbootpractice.Service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -34,5 +33,17 @@ public class DepartmentController {
     private Department getDepartmentById(@PathVariable(value = "id") Long id)
     {
         return departmentService.getDepartmentById(id);
+    }
+
+    @DeleteMapping("/departments/{id}")
+    private List<Department> deleteDepartment(@PathVariable(value = "id") Long id)
+    {
+        return departmentService.deleteDepartmentByID(id);
+    }
+
+    @PutMapping("/departments/{id}")
+    private List<Department> updateDepartment(@PathVariable(value = "id") Long id,@RequestParam(name = "name") String departmentName)
+    {
+        return departmentService.updateDepartment(id,departmentName);
     }
 }

@@ -10,4 +10,8 @@ public interface DepartmentService {
     List<Department> getDepartment();
 
     Department getDepartmentById(Long id);
+
+    List<Department> deleteDepartmentByID(Long id);
+
+    List<Department> updateDepartment(Long id, String departmentName);
 }
