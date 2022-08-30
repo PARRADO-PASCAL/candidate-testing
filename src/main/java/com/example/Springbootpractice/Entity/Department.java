@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class DepartmentEntity {
+public class Department {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long departmentId;
@@ -14,7 +14,7 @@ public class DepartmentEntity {
     private String departmentAddress;
     private String departmentCode;
 
-    public DepartmentEntity() {
+    public Department() {
     }
 
     @Override
@@ -27,7 +27,7 @@ public class DepartmentEntity {
                 '}';
     }
 
-    public DepartmentEntity(Long departmentId, String departmentName, String departmentAddress, String departmentCode) {
+    public Department(Long departmentId, String departmentName, String departmentAddress, String departmentCode) {
         this.departmentId = departmentId;
         this.departmentName = departmentName;
         this.departmentAddress = departmentAddress;
