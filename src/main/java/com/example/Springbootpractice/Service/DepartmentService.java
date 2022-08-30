@@ -6,4 +6,8 @@ import java.util.List;
 
 public interface DepartmentService {
     public List<Department> saveDepartment(Department department);
+
+    List<Department> getDepartment();
+
+    Department getDepartmentById(Long id);
 }
