@@ -14,4 +14,6 @@ public interface DepartmentService {
     List<Department> deleteDepartmentByID(Long id);
 
     List<Department> updateDepartment(Long id, String departmentName);
+
+    List<Department> updateDepartment(Long id, Department department);
 }

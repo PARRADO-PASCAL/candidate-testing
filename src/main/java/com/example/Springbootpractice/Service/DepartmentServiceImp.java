@@ -2,10 +2,12 @@ package com.example.Springbootpractice.Service;
 
 import com.example.Springbootpractice.Entity.Department;
 import com.example.Springbootpractice.Repository.DepartmentRepository;
+import org.omg.CORBA.Object;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class DepartmentServiceImp implements DepartmentService{
@@ -47,5 +49,29 @@ public class DepartmentServiceImp implements DepartmentService{
             throw new IllegalStateException("the instance is not available");
         }
         return departmentRepository.findAll();
+    }
+
+    @Override
+    public List<Department> updateDepartment(Long id, Department department) {
+        if(departmentRepository.existsById(id))
+        {
+            Department department1 = departmentRepository.findById(id).get();
+            if(Objects.nonNull(department.getDepartmentName()) && !"".equalsIgnoreCase(department.getDepartmentName()))
+            {
+                department1.setDepartmentName(department.getDepartmentName());
+            }
+            if(Objects.nonNull(department.getDepartmentAddress()) && !"".equalsIgnoreCase(department.getDepartmentAddress()))
+            {
+                department1.setDepartmentAddress(department.getDepartmentAddress());
+            }
+            if(Objects.nonNull(department.getDepartmentCode()) && !"".equalsIgnoreCase(department.getDepartmentCode()))
+            {
+                department1.setDepartmentCode(department.getDepartmentCode());
+            }
+            departmentRepository.save(department1);
+
+
+        }
+return departmentRepository.findAll();
     }
 }
