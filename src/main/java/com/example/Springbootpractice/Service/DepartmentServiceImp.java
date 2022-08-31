@@ -77,7 +77,7 @@ return departmentRepository.findAll();
 
     @Override
     public Department getDepartmentByName(String departmentName) {
-        return departmentRepository.findByDepartmentName(departmentName);
+        return departmentRepository.findByDepartmentNameIgnoreCase(departmentName);
 
     }
 }
