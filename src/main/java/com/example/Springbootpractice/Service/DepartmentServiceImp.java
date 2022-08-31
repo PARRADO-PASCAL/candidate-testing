@@ -74,4 +74,10 @@ public class DepartmentServiceImp implements DepartmentService{
         }
 return departmentRepository.findAll();
     }
+
+    @Override
+    public Department getDepartmentByName(String departmentName) {
+        return departmentRepository.findByDepartmentName(departmentName);
+
+    }
 }
