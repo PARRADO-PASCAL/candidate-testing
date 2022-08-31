@@ -5,6 +5,7 @@ import com.example.Springbootpractice.Service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -16,7 +17,7 @@ public class DepartmentController {
     // return the response
 
     @PostMapping("/departments")
-    private List<Department> saveDepartment(@RequestBody Department department) {
+    private List<Department> saveDepartment(@Valid @RequestBody Department department) {
         return departmentService.saveDepartment(department);
 //        departmentRepository.save(department);
 //        System.out.println("the value recieved is "+department);
