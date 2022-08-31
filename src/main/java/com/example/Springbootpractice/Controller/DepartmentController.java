@@ -2,6 +2,8 @@ package com.example.Springbootpractice.Controller;
 
 import com.example.Springbootpractice.Entity.Department;
 import com.example.Springbootpractice.Service.DepartmentService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +13,7 @@ import java.util.List;
 @RestController
 public class DepartmentController {
 
+    private final Logger LOGGER = LoggerFactory.getLogger(DepartmentController.class);
     @Autowired
     DepartmentService departmentService;//why we are using the service instead of directly using the repository is because
     //when we are in a real application, there is a business logic processing in this stage and then only after this we
@@ -26,6 +29,7 @@ public class DepartmentController {
 
     @GetMapping("/departments")
     private List<Department> getDepartment() {
+        LOGGER.info("Recieved the first request");
         return departmentService.getDepartment();
     }
 
