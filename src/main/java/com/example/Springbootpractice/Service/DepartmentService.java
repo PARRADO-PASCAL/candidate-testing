@@ -1,6 +1,7 @@
 package com.example.Springbootpractice.Service;
 
 import com.example.Springbootpractice.Entity.Department;
+import com.example.Springbootpractice.Error.DepartmentNotFound;
 
 import java.util.List;
 
@@ -9,7 +10,7 @@ public interface DepartmentService {
 
     List<Department> getDepartment();
 
-    Department getDepartmentById(Long id);
+    Department getDepartmentById(Long id) throws DepartmentNotFound;
 
     List<Department> deleteDepartmentByID(Long id);
 
