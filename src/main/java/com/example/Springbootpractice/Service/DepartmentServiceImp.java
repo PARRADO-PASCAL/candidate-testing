@@ -82,7 +82,7 @@ public class DepartmentServiceImp implements DepartmentService{
 return departmentRepository.findAll();
     }
 
-    //this is for our custom data entity search
+    //this is for our custom data entity search yeah
     @Override
     public Department getDepartmentByName(String departmentName) {
         return departmentRepository.findByDepartmentNameIgnoreCase(departmentName);
