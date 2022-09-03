@@ -3,7 +3,6 @@ package com.example.Springbootpractice.Service;
 import com.example.Springbootpractice.Entity.Department;
 import com.example.Springbootpractice.Error.DepartmentNotFound;
 import com.example.Springbootpractice.Repository.DepartmentRepository;
-import org.omg.CORBA.Object;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +10,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-@Service
+@Service        
 public class DepartmentServiceImp implements DepartmentService{
 
     @Autowired

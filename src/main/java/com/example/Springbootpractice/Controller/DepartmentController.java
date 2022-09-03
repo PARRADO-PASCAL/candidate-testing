@@ -20,6 +20,8 @@ public class DepartmentController {
     //when we are in a real application, there is a business logic processing in this stage and then only after this we
     // return the response
 
+
+    //@valid is used for the validation setting
     @PostMapping("/departments")
     private List<Department> saveDepartment(@Valid @RequestBody Department department) {
         return departmentService.saveDepartment(department);
