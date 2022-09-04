@@ -46,6 +46,7 @@ public class DepartmentController {
         return departmentService.deleteDepartmentByID(id);
     }
 
+    //request params is actually the query parameter
     @PutMapping("/departmentsByMe/{id}")
     private List<Department> updateDepartment(@PathVariable(value = "id") Long id, @RequestParam(name = "name") String departmentName) {
         return departmentService.updateDepartment(id, departmentName);
