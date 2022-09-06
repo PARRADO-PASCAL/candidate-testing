@@ -41,6 +41,7 @@ public class DepartmentController {
         return departmentService.getDepartmentById(id);
     }
 
+    //path variable name mentioned in the path and in the code should be the same
     @DeleteMapping("/departments/{id}")
     private List<Department> deleteDepartment(@PathVariable(value = "id") Long id) {
         return departmentService.deleteDepartmentByID(id);
