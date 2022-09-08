@@ -18,8 +18,6 @@ import javax.validation.constraints.NotBlank;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@EnableJpaRepositories
-
 public class Department {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
