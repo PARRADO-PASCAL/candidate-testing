@@ -1,0 +1,36 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/dcbapp-qa
+    password: 38_myloveIAS@1#
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+    config:
+      activate:
+        on-profile: qa
+welcome:
+  hello: '"this is a beautiful day maan"'
+---
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/dcbapp
+    password: 38_myloveIAS@1#
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+  config:
+    activate:
+      on-profile: dev
+welcome:
+  hello: '"this is a beautiful day maan"'
+
+#yml profiles can be made using config activate on-profile and then the profile name
+#but while that is there, when we are specifying the profile to use, it should always be the first profile that is to be used alright yeah
