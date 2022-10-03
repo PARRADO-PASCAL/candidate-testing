@@ -1,4 +1,4 @@
-# Advanced-Springboot-practice
+# Advanced-Springboot-with-Testing
 
 1. A spring boot Project, made with the intention to learn all the major features of the Framework.
 
