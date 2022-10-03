@@ -6,10 +6,10 @@
 
 3. Prominent Features Include: 
 
-  1. CRUD API's
-  2. Using Both In-Memory H2 Database and later MySQL database
-  3. Global Exception Handlers
-  4. Testing Using JUnit framework
+     1. CRUD API's
+     2. Using Both In-Memory H2 Database and later MySQL database
+     3. Global Exception Handlers
+     4. Testing Using JUnit framework
 
 4. Features Covered Include:
 
