@@ -2,7 +2,7 @@
 
 1. A spring boot Project, made with the intention to learn all the major features of the Framework.
 
-2. Tech Used: Spring Boot, Java 8, PostMan, Lombok, JUnit.
+2. Tech Used: Spring Boot, Java 8, PostMan, Lombok, JUnit, Hibernate Validations.
 
 3. Prominent Features Include: 
 
@@ -26,6 +26,7 @@
     10. Implemented Service Layer tested using JUnit Testing Framework.
     11. Implemented Repository Layer testing using JUnit Testing Framework.
     12. Converted Application.properties into yml File.
+    13. Hibernate Validations Added.
 
 5. Tools Used: 
     
