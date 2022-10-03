@@ -25,6 +25,7 @@
     9. Used MySQL database.
     10. Implemented Service Layer tested using JUnit Testing Framework.
     11. Implemented Repository Layer testing using JUnit Testing Framework.
+    12. Converted Application.properties into yml File.
 
 5. Tools Used: 
     
