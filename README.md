@@ -1,6 +1,6 @@
 # Advanced-Springboot-with-Testing
 
-1. A spring boot Project, made with the intention to learn all the major features of the Framework.
+1. A SpringBoot Project, made with the intention to learn all the major features of the Framework.
 
 2. Tech Used: Spring Boot, Java 8, PostMan, Lombok, JUnit, Hibernate Validations.
 
