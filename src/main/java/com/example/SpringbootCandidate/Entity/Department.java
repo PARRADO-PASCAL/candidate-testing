@@ -5,10 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 
@@ -19,9 +16,10 @@ import javax.validation.constraints.NotBlank;
 @Builder
 public class Department {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long departmentId;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "department_seq")
+    @SequenceGenerator(name = "department_seq", sequenceName = "department_sequence", allocationSize = 1)
+    private Long id;
     @NotBlank(message = "Please provide the department name")
-    private String departmentName;
-    private String departmentCode;
+    private String name;
+    private String code;
 }

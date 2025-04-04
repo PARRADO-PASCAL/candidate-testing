@@ -28,17 +28,18 @@
 
 ## What is in this project
 ### Controller
-[DepartmentController.java](src%2Fmain%2Fjava%2Fcom%2Fexample%2FSpringbootpractice%2FController%2FDepartmentController.java)
+[DepartmentController.java](src%2Fmain%2Fjava%2Fcom%2Fexample%2FSpringbootCandidate%2FController%2FDepartmentController.java)
 ### Entity
-[Department.java](src%2Fmain%2Fjava%2Fcom%2Fexample%2FSpringbootpractice%2FEntity%2FDepartment.java)
+[Department.java](src%2Fmain%2Fjava%2Fcom%2Fexample%2FSpringbootCandidate%2FEntity%2FDepartment.java)
 ### Repository
-[DepartmentRepository.java](src%2Fmain%2Fjava%2Fcom%2Fexample%2FSpringbootpractice%2FRepository%2FDepartmentRepository.java)
+[DepartmentRepository.java](src%2Fmain%2Fjava%2Fcom%2Fexample%2FSpringbootCandidate%2FRepository%2FDepartmentRepository.java)
 ### Service
-[DepartmentService.java](src%2Fmain%2Fjava%2Fcom%2Fexample%2FSpringbootpractice%2FService%2FDepartmentService.java)
+[DepartmentService.java](src%2Fmain%2Fjava%2Fcom%2Fexample%2FSpringbootCandidate%2FService%2FDepartmentService.java)
 
 ## What is required for this test
+- The endpoint getDepartmentByName is broken<br>needs to be fixed
 - Add the latitude and longitude fields to the Department entity
 - Insert the departments into the database
-- Create a "/search" endpoint that takes the latitude and longitude of a city as parameters <br><br> The expected return value is the closest department to the sent coordinates within a 20 km radius
+- Create a "/search-closest" endpoint that takes the latitude and longitude of a city as parameters <br><br> The expected return value is the closest department to the sent coordinates within a 20 km radius
 - Create a unit test for the DepartmentService service
 - Create an integration test for the DepartmentController controller

@@ -6,6 +6,8 @@ import com.example.SpringbootCandidate.Service.DepartmentService;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -20,14 +22,17 @@ public class DepartmentController {
     private final DepartmentService departmentService;
 
     @PostMapping()
-    private List<Department> saveDepartment(@Valid @RequestBody Department department) {
-        return departmentService.saveDepartment(department);
+    private ResponseEntity<Department> saveDepartment(@Valid @RequestBody Department department) {
+        return
+                ResponseEntity
+                        .status(HttpStatus.CREATED)
+                        .body(departmentService.saveDepartment(department));
     }
 
     @GetMapping()
-    private List<Department> getDepartment() {
+    private List<Department> getDepartments() {
         LOGGER.info("Recieved the first request");
-        return departmentService.getDepartment();
+        return departmentService.getDepartments();
     }
 
     @GetMapping("/{id}")
@@ -36,19 +41,19 @@ public class DepartmentController {
     }
 
     @DeleteMapping("/{id}")
-    private List<Department> deleteDepartment(@PathVariable(value = "id") Long id) {
-        return departmentService.deleteDepartmentByID(id);
+    private ResponseEntity<Void> deleteDepartment(@PathVariable(value = "id") Long id) {
+        departmentService.deleteDepartmentByID(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
     @PutMapping("{id}")
-    private List<Department> updateDepartment(@PathVariable(value = "id") Long id, @RequestBody Department department) {
+    private Department updateDepartment(@PathVariable(value = "id") Long id, @RequestBody Department department) {
         return departmentService.updateDepartment(id, department);
     }
 
-    @GetMapping("/name")
-    private Department getDepartmentByName(@RequestParam(name = "departmentName") String departmentName) {
-        System.out.println("departmentName = " + departmentName);
-        return departmentService.getDepartmentByName(departmentName);
-
+    @GetMapping("/search")
+    private Department getDepartmentByName(@RequestParam(name = "name") String name) {
+        System.out.println("departmentName = " + name);
+        return departmentService.getDepartmentByName(name);
     }
 }

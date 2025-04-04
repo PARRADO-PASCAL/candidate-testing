@@ -17,13 +17,12 @@ public class DepartmentServiceImp implements DepartmentService {
     private final DepartmentRepository departmentRepository;
 
     @Override
-    public List<Department> saveDepartment(Department department) {
-         departmentRepository.save(department);
-         return departmentRepository.findAll();
+    public Department saveDepartment(Department department) {
+         return departmentRepository.save(department);
     }
 
     @Override
-    public List<Department> getDepartment() {
+    public List<Department> getDepartments() {
         return departmentRepository.findAll();
     }
 
@@ -38,49 +37,30 @@ public class DepartmentServiceImp implements DepartmentService {
     }
 
     @Override
-    public List<Department> deleteDepartmentByID(Long id) {
+    public void deleteDepartmentByID(Long id) {
         departmentRepository.deleteById(id);
-        return departmentRepository.findAll();
     }
 
     @Override
-    public List<Department> updateDepartment(Long id, String departmentName) {
-        if(departmentRepository.existsById(id))
-        {
-            Department department = departmentRepository.findById(id).get();
-            department.setDepartmentName(departmentName);
-            departmentRepository.save(department);
-        }
-        else {
-            throw new IllegalStateException("the instance is not available");
-        }
-        return departmentRepository.findAll();
-    }
-
-    @Override
-    public List<Department> updateDepartment(Long id, Department department) {
+    public Department updateDepartment(Long id, Department department) {
         if(departmentRepository.existsById(id))
         {
             Department department1 = departmentRepository.findById(id).get();
-            if(Objects.nonNull(department.getDepartmentName()) && !"".equalsIgnoreCase(department.getDepartmentName()))
+            if(Objects.nonNull(department.getName()) && !"".equalsIgnoreCase(department.getName()))
             {
-                department1.setDepartmentName(department.getDepartmentName());
+                department1.setName(department.getName());
             }
-            if(Objects.nonNull(department.getDepartmentCode()) && !"".equalsIgnoreCase(department.getDepartmentCode()))
+            if(Objects.nonNull(department.getCode()) && !"".equalsIgnoreCase(department.getCode()))
             {
-                department1.setDepartmentCode(department.getDepartmentCode());
+                department1.setCode(department.getCode());
             }
-            departmentRepository.save(department1);
-
-
+            return departmentRepository.save(department1);
         }
-return departmentRepository.findAll();
+        throw new IllegalStateException("Department with id " + id + " does not exist");
     }
 
-    //this is for our custom data entity search
     @Override
-    public Department getDepartmentByName(String departmentName) {
-        return departmentRepository.findByDepartmentNameIgnoreCase(departmentName);
-
+    public Department getDepartmentByName(String name) {
+        return null;
     }
 }

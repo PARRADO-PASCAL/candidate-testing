@@ -8,6 +8,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 @EnableJpaRepositories
 public interface DepartmentRepository extends JpaRepository<Department,Long> {
-
-    Department findByDepartmentNameIgnoreCase(String departmentName);
 }

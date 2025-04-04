@@ -6,17 +6,15 @@ import com.example.SpringbootCandidate.Error.DepartmentNotFoundException;
 import java.util.List;
 
 public interface DepartmentService {
-    public List<Department> saveDepartment(Department department);
+    Department saveDepartment(Department department);
 
-    List<Department> getDepartment();
+    List<Department> getDepartments();
 
     Department getDepartmentById(Long id) throws DepartmentNotFoundException;
 
-    List<Department> deleteDepartmentByID(Long id);
+    void deleteDepartmentByID(Long id);
 
-    List<Department> updateDepartment(Long id, String departmentName);
+    Department updateDepartment(Long id, Department department);
 
-    List<Department> updateDepartment(Long id, Department department);
-
-    Department getDepartmentByName(String departmentName);
+    Department getDepartmentByName(String name);
 }
