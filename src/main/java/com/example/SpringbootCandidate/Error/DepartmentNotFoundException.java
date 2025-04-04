@@ -1,4 +1,4 @@
-package com.example.Springbootpractice.Error;
+package com.example.SpringbootCandidate.Error;
 
 public class DepartmentNotFoundException extends Exception{
     public DepartmentNotFoundException() {

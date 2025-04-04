@@ -1,59 +1,44 @@
-# Advanced-Springboot-with-Testing
+# Candidate Spring boot test
 
-1. A SpringBoot Project, made with the intention to learn all the major features of the Framework.
+## Run projet
+1. install docker and docker compose if not already installed
+2. run docker-compose up -d
+3. Launch spring boot application
+4. You're ready to go
 
-2. Tech Used: Spring Boot, Java 8, PostMan, Lombok, JUnit, Hibernate Validations.
+## Context
+### 🗺️ Départements
 
-3. Prominent Features Include: 
+| Département             | Code | Latitude  | Longitude |
+|------------------------|------|-----------|-----------|
+| Paris                  | 75   | 48.8566   | 2.3522    |
+| Hauts-de-Seine         | 92   | 48.8101   | 2.2419    |
+| Rhône                  | 69   | 45.7485   | 4.8467    |
+| Bouches-du-Rhône       | 13   | 43.2965   | 5.3698    |
 
-     1. CRUD API's
-     2. Using Both In-Memory H2 Database and later MySQL database
-     3. Global Exception Handlers
-     4. Testing Using JUnit framework
+### 🗺️ Départements, villes voisines
 
-4. Features Covered Include:
+| Département             | Ville voisine        | Latitude  | Longitude |
+|-------------------------|----------------------|-----------|-----------|
+| Paris (75)              | Montreuil            | 48.8594   | 2.4400    |
+| Hauts-de-Seine (92)     | Nanterre             | 48.8922   | 2.2113    |
+| Rhône (69)              | Villeurbanne         | 45.7666   | 4.8909    |
+| Bouches-du-Rhône (13)   | Aix-en-Provence      | 43.5297   | 5.4474    |
 
-    1. CRUD Features: Create, Read, Update, Delete API's
-    2. Configurations to Connect with Database using Application.properties.
-    3. Devision of application into different layers Controller, service, database Layer.
-    4. Used Request Params for Request Handling.
-    5. Used Query Params for Request Handling.
-    5. Connected with in Memory H2 Database.
-    6. Added Loggers 
-    7. Used Lombok Library to autogenerate common code.
-    8. Global Exception Handlers
-    9. Used MySQL database.
-    10. Implemented Service Layer tested using JUnit Testing Framework.
-    11. Implemented Repository Layer testing using JUnit Testing Framework.
-    12. Converted Application.properties into yml File.
-    13. Hibernate Validations Added.
 
-5. Tools Used: 
-    
-    1. IntellJ Ultimate Edition.
-    2. Github for Version Control.
-    3. Lombok Library for AutoCode Generation.
-    4. H2 In-Memory Database.
-    5. MySQL database.
-    6. JUnit Testing Framework.
-    7. Loggers.
-    8. PostMan.
-    
- ## STEPS TO RUN
- 
- 1. Clone the Repo
- 2. Open project in intellJ.
- 3. Run The application.
- 4. Use PostMan to Trigger API's.
- 
- ## LEARNINGS AND EXPERIENCE.
- 
- The Project was a good learning exercise that helped understand:
- 
- 1. How Spring Boot Works
- 2. How To Structure Spring Boot Applications.
- 3. How to Test different Layers.
- 4. How to Connect to Database using Spring Boot.
- 
-  
+## What is in this project
+### Controller
+[DepartmentController.java](src%2Fmain%2Fjava%2Fcom%2Fexample%2FSpringbootpractice%2FController%2FDepartmentController.java)
+### Entity
+[Department.java](src%2Fmain%2Fjava%2Fcom%2Fexample%2FSpringbootpractice%2FEntity%2FDepartment.java)
+### Repository
+[DepartmentRepository.java](src%2Fmain%2Fjava%2Fcom%2Fexample%2FSpringbootpractice%2FRepository%2FDepartmentRepository.java)
+### Service
+[DepartmentService.java](src%2Fmain%2Fjava%2Fcom%2Fexample%2FSpringbootpractice%2FService%2FDepartmentService.java)
 
+## What is required for this test
+- Add the latitude and longitude fields to the Department entity
+- Insert the departments into the database
+- Create a "/search" endpoint that takes the latitude and longitude of a city as parameters <br><br> The expected return value is the closest department to the sent coordinates within a 20 km radius
+- Create a unit test for the DepartmentService service
+- Create an integration test for the DepartmentController controller

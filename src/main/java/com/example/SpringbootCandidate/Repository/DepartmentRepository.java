@@ -1,6 +1,6 @@
-package com.example.Springbootpractice.Repository;
+package com.example.SpringbootCandidate.Repository;
 
-import com.example.Springbootpractice.Entity.Department;
+import com.example.SpringbootCandidate.Entity.Department;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Repository;
@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
 @EnableJpaRepositories
 public interface DepartmentRepository extends JpaRepository<Department,Long> {
 
-    public Department findByDepartmentNameIgnoreCase(String departmentName);
+    Department findByDepartmentNameIgnoreCase(String departmentName);
 }

@@ -1,20 +1,20 @@
-package com.example.Springbootpractice.Service;
+package com.example.SpringbootCandidate.Service;
 
-import com.example.Springbootpractice.Entity.Department;
-import com.example.Springbootpractice.Error.DepartmentNotFoundException;
-import com.example.Springbootpractice.Repository.DepartmentRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.SpringbootCandidate.Entity.Department;
+import com.example.SpringbootCandidate.Error.DepartmentNotFoundException;
+import com.example.SpringbootCandidate.Repository.DepartmentRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-@Service        
-public class DepartmentServiceImp implements DepartmentService{
+@Service
+@AllArgsConstructor
+public class DepartmentServiceImp implements DepartmentService {
 
-    @Autowired
-    DepartmentRepository departmentRepository;
+    private final DepartmentRepository departmentRepository;
 
     @Override
     public List<Department> saveDepartment(Department department) {
@@ -65,10 +65,6 @@ public class DepartmentServiceImp implements DepartmentService{
             if(Objects.nonNull(department.getDepartmentName()) && !"".equalsIgnoreCase(department.getDepartmentName()))
             {
                 department1.setDepartmentName(department.getDepartmentName());
-            }
-            if(Objects.nonNull(department.getDepartmentAddress()) && !"".equalsIgnoreCase(department.getDepartmentAddress()))
-            {
-                department1.setDepartmentAddress(department.getDepartmentAddress());
             }
             if(Objects.nonNull(department.getDepartmentCode()) && !"".equalsIgnoreCase(department.getDepartmentCode()))
             {

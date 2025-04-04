@@ -1,10 +1,9 @@
-package com.example.Springbootpractice.Entity;
+package com.example.SpringbootCandidate.Entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,7 +23,5 @@ public class Department {
     private Long departmentId;
     @NotBlank(message = "Please provide the department name")
     private String departmentName;
-    private String departmentAddress;
     private String departmentCode;
-
 }

@@ -1,7 +1,7 @@
-package com.example.Springbootpractice.Service;
+package com.example.SpringbootCandidate.Service;
 
-import com.example.Springbootpractice.Entity.Department;
-import com.example.Springbootpractice.Error.DepartmentNotFoundException;
+import com.example.SpringbootCandidate.Entity.Department;
+import com.example.SpringbootCandidate.Error.DepartmentNotFoundException;
 
 import java.util.List;
 
