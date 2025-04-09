@@ -46,9 +46,9 @@ This is an api departments, it permits to list, get, delete, create departments
 [api-departments.postman_collection.json](api-departments.postman_collection.json)
 
 ## What is asked for this test
+- Insert the departments into the database
 - The endpoint getDepartmentByName is broken<br>needs to be fixed
 - Add the latitude and longitude fields to the Department entity
-- Insert the departments into the database
 - Create a "/search-closest" endpoint that takes the latitude and longitude of a city as parameters <br><br> The expected return value is the closest department to the sent coordinates within a 20 km radius
 - Create a unit test for the DepartmentService service
 - Create an integration test for the DepartmentController controller
