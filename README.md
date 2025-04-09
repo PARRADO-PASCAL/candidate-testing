@@ -36,7 +36,7 @@
 ### Service
 [DepartmentService.java](src%2Fmain%2Fjava%2Fcom%2Fexample%2FSpringbootCandidate%2FService%2FDepartmentService.java)
 ### Postman collection
-[api-departments.postman_collection.json](..%2F..%2F..%2FOneDrive%20-%20Supplier%20Assessment%20Services%20Limited%2FBureau%2Fapi-departments.postman_collection.json)
+[api-departments.postman_collection.json](api-departments.postman_collection.json)
 
 ## What is asked for this test
 - The endpoint getDepartmentByName is broken<br>needs to be fixed
