@@ -1,5 +1,10 @@
 # Candidate Spring boot test
 
+## Technical Prerequisite
+- mvn
+- docker (docker-compose)
+- IDE of your choice
+
 ## Run projet
 1. install docker and docker compose if not already installed
 2. run docker-compose up -d
@@ -7,7 +12,9 @@
 4. You're ready to go
 
 ## Context
-### 🗺️ Départements
+This is an api departments, it permits to list, get, delete, create departments
+
+### 🗺️ Departments
 
 | Département             | Code | Latitude  | Longitude |
 |------------------------|------|-----------|-----------|
@@ -16,7 +23,7 @@
 | Rhône                  | 69   | 45.7485   | 4.8467    |
 | Bouches-du-Rhône       | 13   | 43.2965   | 5.3698    |
 
-### 🗺️ Départements, villes voisines
+### 🗺️ Departments closest towns
 
 | Département             | Ville voisine        | Latitude  | Longitude |
 |-------------------------|----------------------|-----------|-----------|
